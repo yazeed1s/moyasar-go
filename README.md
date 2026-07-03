@@ -4,6 +4,11 @@ Small Go SDK for Moyasar.
 
 It wraps the Moyasar REST API with typed services and request structs.
 
+## Links
+
+- [Moyasar](https://moyasar.com/en/)
+- [Moyasar docs](https://docs.moyasar.com/)
+
 ## Install
 
 ```sh
