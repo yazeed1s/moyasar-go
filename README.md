@@ -68,6 +68,29 @@ payments, err := client.Payments.List(ctx, moyasar.ListPaymentsParams{
 
 List responses include `Meta` for pagination.
 
+## Sandbox test cards
+
+The SDK has Moyasar sandbox test card constants.
+
+```go
+moyasar.TestCardVisaPaid
+moyasar.TestCardVisaInsufficientFunds
+moyasar.TestCardMadaPaid
+moyasar.TestCardMastercardPaid
+moyasar.TestCardAmexPaid
+```
+
+You can also use the full typed list:
+
+```go
+for _, card := range moyasar.TestCards {
+	fmt.Println(card.Brand, card.Number, card.ExpectedStatus)
+}
+```
+
+These cards are only for Moyasar sandbox. For the full table, see
+[Moyasar test cards](https://docs.moyasar.com/guides/card-payments/test-cards).
+
 ## Services
 
 The client has these services:
@@ -113,6 +136,12 @@ Run one example:
 
 ```sh
 MOYASAR_API_KEY=sk_test_xxx go run ./examples/list-payments
+```
+
+Failed payment example:
+
+```sh
+MOYASAR_API_KEY=sk_test_xxx go run ./examples/create-failed-payment
 ```
 
 Use test keys while trying the SDK.
